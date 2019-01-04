@@ -10,13 +10,13 @@ import retrofit2.http.Path
 interface EventsAPI {
 
     @GET("events")
-    fun getEvents(): Call< List<Event> >
+    fun getEvents(): Call<List<Event>>
 
     @GET("events/{eventID}")
-    fun getEventByID(@Path("eventID") eventID: String ):  Call<Event>
+    fun getEventByID(@Path("eventID") eventID: String): Call<Event>
 
     @POST("checkin")
-    fun checkin(@Field("eventID") eventID: String, @Field("name") name: String , @Field("email") email: String ):  Call<Event>
+    fun checkin(@Field("eventID") eventID: String, @Field("name") name: String, @Field("email") email: String): Call<Event>
 
 
 }

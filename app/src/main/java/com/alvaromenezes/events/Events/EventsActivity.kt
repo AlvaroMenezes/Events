@@ -17,13 +17,13 @@ class EventsActivity : AppCompatActivity() {
 
     }
 
-    fun showEventsFragment(){
+    fun showEventsFragment() {
 
         val fragment = EventsFragment()
 
         supportFragmentManager
             .beginTransaction()
-            .replace(R.id.contentFrame,fragment)
+            .replace(R.id.contentFrame, fragment)
             .addToBackStack(null)
             .commit()
     }
