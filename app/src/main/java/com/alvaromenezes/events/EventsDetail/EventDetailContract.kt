@@ -1,5 +1,7 @@
 package com.alvaromenezes.events.EventsDetail
 
+import com.alvaromenezes.events.data.Person
+
 
 interface EventDetailContract {
 
@@ -12,13 +14,15 @@ interface EventDetailContract {
         fun showDate(date: String)
         fun showDescription(description: String)
         fun showMapLocation(lat: String, lon: String, title: String)
+        fun showPeople(people: List<Person>)
 
 
     }
 
     interface Presenter {
-        fun loadEventDetatail(eventID: String)
+        fun loadEventDetail(eventID: String)
         fun showEventDetail()
+        fun showPeople()
         fun showMapLocation()
         fun attach(view: EventDetailContract.View)
     }

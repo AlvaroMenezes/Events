@@ -3,13 +3,15 @@ package com.alvaromenezes.events.EventsDetail
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-
 import android.os.Bundle
 import android.support.v4.app.Fragment
+import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alvaromenezes.events.Events.PersonAdapter
 import com.alvaromenezes.events.R
+import com.alvaromenezes.events.data.Person
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
@@ -19,7 +21,6 @@ private const val ARG_EVENT_ID = "event_id"
 
 
 class EventDetailFragment : Fragment(), EventDetailContract.View {
-
 
 
 
@@ -62,21 +63,20 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
 
         presenter = EventDetailPresenter()
         presenter.attach(this)
-        presenter.loadEventDetatail(eventID)
+        presenter.loadEventDetail(eventID)
 
         ivLocation.setOnClickListener { presenter.showMapLocation() }
 
 
     }
 
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
 
-    }
 
-    override fun onDetach() {
-        super.onDetach()
-
+    override fun showPeople(people: List<Person>) {
+        reciclerViewPerson.let {
+            it.layoutManager = LinearLayoutManager(context)
+            it.adapter = PersonAdapter(people)
+        }
     }
 
 
@@ -101,13 +101,13 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
     }
 
     override fun showPrice(price: String) {
-        tvPriceDetail.text = price
+        tvPriceDetail.text = "Valor: $price"
 
     }
 
     override fun showDate(date: String) {
 
-        tvDateDetail.text = date
+        tvDateDetail.text = "Quando: $date"
     }
 
 
@@ -124,6 +124,15 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
 
         startActivity(intent)
 
+    }
+
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+    }
+
+    override fun onDetach() {
+        super.onDetach()
     }
 
 

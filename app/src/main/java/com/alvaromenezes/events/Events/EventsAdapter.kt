@@ -10,7 +10,6 @@ import com.alvaromenezes.events.data.Event
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
-
 import kotlinx.android.synthetic.main.card_event_item.view.*
 
 
@@ -35,9 +34,8 @@ class EventsAdapter(val events: List<Event>, private val eventView: EventsContra
 
 
         fun bind(event: Event) {
-
-            with(event) {
-                with(itemView) {
+            itemView.apply {
+                with(event) {
 
                     Glide
                         .with(context)
@@ -53,7 +51,6 @@ class EventsAdapter(val events: List<Event>, private val eventView: EventsContra
 
                     tvTitle.text = title
                     tvPrice.text = getPrice
-
 
                     setOnClickListener { this@ViewHolder.eventView.showDetail(event.id) }
                 }
