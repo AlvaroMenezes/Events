@@ -9,11 +9,12 @@
             xmlns:card_view="http://schemas.android.com/apk/res-auto"
             android:id="@+id/card_view"
             android:layout_gravity="center"
-            android:layout_margin="4dp"
             app:cardElevation="3dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            card_view:cardCornerRadius="4dp">
+            card_view:cardCornerRadius="4dp"
+            app:contentPadding="4dp"
+            card_view:cardUseCompatPadding="true">
 
         <RelativeLayout
                 android:layout_width="wrap_content"
@@ -24,9 +25,7 @@
                     android:id="@+id/ivImage"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:scaleType="fitXY"
-                    android:layout_centerHorizontal="true"
-                    android:src="@mipmap/ic_launcher"/>
+                    android:adjustViewBounds="true"/>
             <TextView
                     android:id="@+id/tvTitle"
                     android:layout_width="match_parent"

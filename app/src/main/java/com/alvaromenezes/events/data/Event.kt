@@ -12,4 +12,11 @@ class Event(
     val date: Long = 1,
     people: List<Person>? = null,
     cupons: List<Coupon>? = null
-)
+) {
+
+    val getPrice: String
+        get() {
+            return "R$ %.2f".format(price)
+
+        }
+}

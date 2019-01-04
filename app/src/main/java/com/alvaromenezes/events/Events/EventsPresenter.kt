@@ -18,7 +18,20 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
 
     override fun loadEvents() {
 
-        val items = listOf(Event("id", "tile1", 21.1), Event("id", "tile2", 21.1))
+        val items = listOf(
+            Event(
+                "id",
+                "tile1",
+                21.1,
+                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png"
+            ),
+            Event(
+                "id",
+                "tile2",
+                21.1,
+                image = "https://images.pexels.com/photos/1292306/pexels-photo-1292306.jpeg"
+            )
+        )
 
 
         view.showEvents(items)

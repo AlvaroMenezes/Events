@@ -7,12 +7,10 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.alvaromenezes.events.R
 import com.alvaromenezes.events.data.Event
 import com.alvaromenezes.events.di.DaggerAppComponent
 import kotlinx.android.synthetic.main.fragment_events.*
-
 import javax.inject.Inject
 
 
@@ -33,7 +31,8 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         val view = inflater.inflate(R.layout.fragment_events, container, false)

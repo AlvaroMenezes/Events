@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.alvaromenezes.events.R
 import com.alvaromenezes.events.data.Event
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 
 import kotlinx.android.synthetic.main.card_event_item.view.*
 
@@ -32,12 +34,21 @@ class EventsAdapter(private val events: List<Event>) : RecyclerView.Adapter<Even
             with(event) {
                 with(itemView) {
 
+                    Glide
+                        .with(context)
+                        .load(image)
+                        .apply( RequestOptions()
+                                .centerCrop()
+                                .fitCenter())
+                        .into(ivImage)
+
+
                     tvTitle.setText(title)
-                    tvPrice.setText("{R$ $price}")
+                    tvPrice.setText(getPrice)
                 }
             }
         }
     }
 
 
-}
+}                                 
