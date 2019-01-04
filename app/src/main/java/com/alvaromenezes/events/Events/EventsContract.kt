@@ -15,8 +15,8 @@ interface EventsContract {
 
     }
     interface Presenter {
-
         fun loadEvents()
+        fun attach(view : EventsContract.View)
     }
 
 
