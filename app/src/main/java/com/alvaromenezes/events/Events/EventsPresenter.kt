@@ -23,7 +23,7 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
                 "id",
                 "tile1",
                 21.1,
-                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png"
+                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.pngxxx"
             ),
             Event(
                 "id",

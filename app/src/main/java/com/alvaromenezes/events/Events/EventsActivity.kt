@@ -6,21 +6,17 @@ import com.alvaromenezes.events.R
 
 class EventsActivity : AppCompatActivity() {
 
-
     private lateinit var presenter: EventsPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event)
-
         showEventsFragment()
-
     }
 
     fun showEventsFragment() {
 
         val fragment = EventsFragment()
-
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.contentFrame, fragment)
@@ -28,4 +24,8 @@ class EventsActivity : AppCompatActivity() {
             .commit()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        System.exit(0)
+    }
 }
