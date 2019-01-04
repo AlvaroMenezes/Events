@@ -1,5 +1,8 @@
 package com.alvaromenezes.events.data
 
+import java.text.SimpleDateFormat
+import java.util.*
+
 
 class Event(
     val id: String,
@@ -17,6 +20,13 @@ class Event(
     val getPrice: String
         get() {
             return "R$ %.2f".format(price)
+        }
 
+    val getDate: String
+        get() {
+
+            val sdf = SimpleDateFormat("dd/MM/yyyy")
+            val netDate = Date(date)
+            return sdf.format(netDate)
         }
 }

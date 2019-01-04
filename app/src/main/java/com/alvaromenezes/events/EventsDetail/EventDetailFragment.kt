@@ -1,6 +1,8 @@
 package com.alvaromenezes.events.EventsDetail
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 
 import android.os.Bundle
 import android.support.v4.app.Fragment
@@ -16,15 +18,18 @@ import kotlinx.android.synthetic.main.fragment_event_detail.*
 private const val ARG_EVENT_ID = "event_id"
 
 
-class EventDetailFragment : Fragment(),EventDetailContract.View {
+class EventDetailFragment : Fragment(), EventDetailContract.View {
+
+
+
 
     private lateinit var eventID: String
 
 
-    private lateinit var presenter : EventDetailPresenter
+    private lateinit var presenter: EventDetailPresenter
 
 
-            companion object {
+    companion object {
 
         @JvmStatic
         fun newInstance(eventID: String) =
@@ -54,10 +59,14 @@ class EventDetailFragment : Fragment(),EventDetailContract.View {
 
     override fun onStart() {
         super.onStart()
-        
+
         presenter = EventDetailPresenter()
         presenter.attach(this)
         presenter.loadEventDetatail(eventID)
+
+        ivLocation.setOnClickListener { presenter.showMapLocation() }
+
+
     }
 
     override fun onAttach(context: Context) {
@@ -88,24 +97,34 @@ class EventDetailFragment : Fragment(),EventDetailContract.View {
 
     override fun showTitle(title: String) {
 
-
+        tvTitleDetail.text = title
     }
 
     override fun showPrice(price: String) {
-
+        tvPriceDetail.text = price
 
     }
 
     override fun showDate(date: String) {
 
-
+        tvDateDetail.text = date
     }
 
-    override fun showMapLocation(date: String) {
 
+    override fun showDescription(description: String) {
+        tvDescription.text = description
+    }
+    override fun showMapLocation(lat: String, lon: String, title: String) {
+
+        val strUri = "http://maps.google.com/maps?q=loc:$lat,$lon ($title)"
+        val intent = Intent(android.content.Intent.ACTION_VIEW, Uri.parse(strUri))
+
+        intent.setClassName("com.google.android.apps.maps",
+            "com.google.android.maps.MapsActivity")
+
+        startActivity(intent)
 
     }
-
 
 
 }

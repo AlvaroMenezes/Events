@@ -64,7 +64,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     override fun showEvents(events: List<Event>) {
 
         reciclerViewEvents.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        reciclerViewEvents.adapter = EventsAdapter(events,this)
+        reciclerViewEvents.adapter = EventsAdapter(events, this)
     }
 
     override fun showDetail(eventId: String) {

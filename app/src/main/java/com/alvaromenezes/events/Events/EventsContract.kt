@@ -10,12 +10,14 @@ interface EventsContract {
         fun showProgress(visible: Boolean)
         fun showEvents(Events: List<Event>)
         fun showDetail(eventId: String)
-        fun toast(messg:String)
+        fun toast(messg: String)
 
     }
 
     interface Presenter {
         fun loadEvents()
+
+
         fun attach(view: EventsContract.View)
     }
 

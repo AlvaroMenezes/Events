@@ -4,7 +4,6 @@
              android:layout_width="match_parent"
              android:layout_height="match_parent"
              tools:context=".EventsDetail.EventDetailFragment">
-
     <ScrollView
 
             android:layout_width="match_parent"
@@ -20,35 +19,57 @@
                     android:layout_height="256dp"
                     android:adjustViewBounds="true"/>
             <TextView
-                    android:id="@+id/tvTitle"
+                    android:id="@+id/tvTitleDetail"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/ivImage"
+                    android:layout_below="@+id/ivImageDetail"
                     android:textSize="18sp"
                     android:textColor="@android:color/black"
-                    android:text="xxx"/>
+                    android:text="titulo"/>
             <TextView
-                    android:id="@+id/tvPrice"
+                    android:id="@+id/tvDateDetail"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvTitle"
+                    android:layout_below="@+id/tvTitleDetail"
                     android:textSize="14sp"
-                    android:text="xxx"/>
+                    android:text="data"/>
 
+            <TextView
+                    android:id="@+id/tvPriceDetail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/tvDateDetail"
+                    android:layout_below="@+id/tvTitleDetail"
+                    android:textSize="14sp"
+                    android:text="preco"/>
+
+
+            <ImageView
+                    android:id="@+id/ivLocation"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/tvDateDetail"
+                    android:src="@drawable/maps_icon"
+                    android:adjustViewBounds="true"/>
             <TextView
                     android:id="@+id/tvDescription"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/tvTitle"
+                    android:layout_below="@+id/ivLocation"
                     android:textSize="14sp"
-                    android:text="xxx"/>
+                    android:text="descricao"/>
+
+
+            <android.support.v7.widget.RecyclerView
+                    android:padding="4dp"
+                    android:id="@+id/reciclerViewPerson"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ivLocation"/>
+
+
 
         </RelativeLayout>
     </ScrollView>
-
-
-
-
-
 
 </FrameLayout>
