@@ -11,9 +11,6 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
     override fun attach(view: EventsContract.View) {
         this.view = view
 
-        this.view.toast("dumb")
-
-
     }
 
     override fun loadEvents() {
@@ -23,7 +20,7 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
                 "id",
                 "tile1",
                 21.1,
-                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.pngxxx"
+                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png"
             ),
             Event(
                 "id",

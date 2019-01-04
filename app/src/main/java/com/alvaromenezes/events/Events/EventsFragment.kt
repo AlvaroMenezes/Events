@@ -2,7 +2,6 @@ package com.alvaromenezes.events.Events
 
 import android.content.Context
 import android.os.Bundle
-import android.os.Message
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
@@ -67,8 +66,9 @@ class EventsFragment : Fragment(), EventsContract.View {
         reciclerViewEvents.adapter = EventsAdapter(events,this)
     }
 
-    override fun showDetail(eventId: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun showDetail(eventId: String) {
+
+
     }
 
 

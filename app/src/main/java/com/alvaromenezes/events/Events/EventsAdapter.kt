@@ -14,11 +14,12 @@ import com.bumptech.glide.request.RequestOptions
 import kotlinx.android.synthetic.main.card_event_item.view.*
 
 
-class EventsAdapter( val events: List<Event>,private val eventView: EventsContract.View ) : RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
+class EventsAdapter(val events: List<Event>, private val eventView: EventsContract.View) :
+    RecyclerView.Adapter<EventsAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.card_event_item, parent, false)
-        return ViewHolder(v,eventView)
+        return ViewHolder(v, eventView)
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +31,7 @@ class EventsAdapter( val events: List<Event>,private val eventView: EventsContra
     }
 
 
-     class ViewHolder(itemView: View, private val eventView: EventsContract.View) : RecyclerView.ViewHolder(itemView)  {
+    class ViewHolder(itemView: View, private val eventView: EventsContract.View) : RecyclerView.ViewHolder(itemView) {
 
 
         fun bind(event: Event) {
@@ -41,10 +42,12 @@ class EventsAdapter( val events: List<Event>,private val eventView: EventsContra
                     Glide
                         .with(context)
                         .load(image)
-                        .apply( RequestOptions()
-                            .placeholder(R.drawable.no_image)
-                            .centerCrop()
-                            .fitCenter())
+                        .apply(
+                            RequestOptions()
+                                .placeholder(R.drawable.no_image)
+                                .centerCrop()
+                                .fitCenter()
+                        )
                         .transition(DrawableTransitionOptions.withCrossFade())
                         .into(ivImage)
 
@@ -52,7 +55,7 @@ class EventsAdapter( val events: List<Event>,private val eventView: EventsContra
                     tvPrice.text = getPrice
 
 
-                    setOnClickListener { this@ViewHolder.eventView.showDetail(event.id)  }
+                    setOnClickListener { this@ViewHolder.eventView.showDetail(event.id) }
                 }
             }
         }

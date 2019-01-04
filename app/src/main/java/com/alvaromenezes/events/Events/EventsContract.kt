@@ -12,7 +12,6 @@ interface EventsContract {
         fun showDetail(eventId: String)
         fun toast(messg:String)
 
-
     }
 
     interface Presenter {
