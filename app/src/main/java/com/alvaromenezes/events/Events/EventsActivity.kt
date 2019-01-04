@@ -20,12 +20,7 @@ class EventsActivity : AppCompatActivity() {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.contentFrame, fragment)
-            .addToBackStack(null)
             .commit()
     }
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-        System.exit(0)
-    }
 }

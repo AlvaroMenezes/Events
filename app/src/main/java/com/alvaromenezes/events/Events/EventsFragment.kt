@@ -1,6 +1,7 @@
 package com.alvaromenezes.events.Events
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
@@ -8,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.alvaromenezes.events.EventsDetail.EventDetailActivity
 import com.alvaromenezes.events.R
 import com.alvaromenezes.events.data.Event
 import com.alvaromenezes.events.di.DaggerAppComponent
@@ -27,7 +29,6 @@ class EventsFragment : Fragment(), EventsContract.View {
         super.onCreate(savedInstanceState)
 
         DaggerAppComponent.create().inject(this)
-
         presenter.attach(this)
 
     }
@@ -68,6 +69,10 @@ class EventsFragment : Fragment(), EventsContract.View {
 
     override fun showDetail(eventId: String) {
 
+        val intent = Intent(context, EventDetailActivity::class.java).apply {
+            putExtra(EventDetailActivity.EVENT_ID, eventId)
+        }
+        startActivity(intent)
 
     }
 

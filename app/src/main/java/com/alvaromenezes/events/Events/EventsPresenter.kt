@@ -10,7 +10,6 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
 
     override fun attach(view: EventsContract.View) {
         this.view = view
-
     }
 
     override fun loadEvents() {
