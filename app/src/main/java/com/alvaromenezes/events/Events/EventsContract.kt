@@ -9,8 +9,8 @@ interface EventsContract {
 
         fun showProgress(visible: Boolean)
         fun showEvents(Events: List<Event>)
-        fun showDetail(eventId: Int)
-        fun toast()
+        fun showDetail(eventId: String)
+        fun toast(messg:String)
 
 
     }

@@ -2,11 +2,13 @@ package com.alvaromenezes.events.Events
 
 import android.content.Context
 import android.os.Bundle
+import android.os.Message
 import android.support.v4.app.Fragment
 import android.support.v7.widget.StaggeredGridLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.alvaromenezes.events.R
 import com.alvaromenezes.events.data.Event
 import com.alvaromenezes.events.di.DaggerAppComponent
@@ -15,8 +17,8 @@ import javax.inject.Inject
 
 
 class EventsFragment : Fragment(), EventsContract.View {
-    override fun toast() {
-        //Toast.makeText(context, "xpto", Toast.LENGTH_SHORT).show()
+    override fun toast(message: String) {
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
     }
 
     @Inject
@@ -62,7 +64,7 @@ class EventsFragment : Fragment(), EventsContract.View {
     override fun showEvents(events: List<Event>) {
 
         reciclerViewEvents.layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
-        reciclerViewEvents.adapter = EventsAdapter(events)
+        reciclerViewEvents.adapter = EventsAdapter(events,this)
     }
 
     override fun showDetail(eventId: Int) {
