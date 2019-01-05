@@ -67,11 +67,14 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
         ivLocation.setOnClickListener { presenter.showMapLocation() }
         ibCheckin.setOnClickListener { presenter.OnChekin() }
 
+        scrollDetail.smoothScrollTo(0,0)
 
     }
 
 
     override fun showPeople(people: List<Person>) {
+        if(people == null) return
+
         reciclerViewPerson.let {
             it.layoutManager = LinearLayoutManager(context)
             it.adapter = PersonAdapter(people)

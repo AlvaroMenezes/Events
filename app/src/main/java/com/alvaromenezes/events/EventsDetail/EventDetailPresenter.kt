@@ -10,7 +10,7 @@ class EventDetailPresenter : EventDetailContract.Presenter {
 
     private lateinit var view: EventDetailContract.View
     private lateinit var eventID: String
-    private lateinit var event: Event
+    private  var event: Event? = null
 
     override fun loadEventDetail(eventID: String) {
         this.eventID = eventID
@@ -40,7 +40,10 @@ class EventDetailPresenter : EventDetailContract.Presenter {
 
     override fun showPeople() {
 
-        view.showPeople(event.people!!)
+        if(event == null) return
+
+
+        view.showPeople(event?.people!!)
     }
 
     override fun OnChekin() {
@@ -55,14 +58,17 @@ class EventDetailPresenter : EventDetailContract.Presenter {
 
 
     override fun showMapLocation() {
-        view.showMapLocation(event.latitude, event.longitude, event.title)
+        if(event == null) return
+        view.showMapLocation(event!!.latitude, event!!.longitude, event!!.title)
     }
 
     override fun showEventDetail() {
 
+        if(event == null) return
+
         view.apply {
             with(event) {
-                showPrice(getPrice)
+                showPrice(this!!.getPrice)
                 loadImage(image)
                 showDate(getDate)
                 showTitle(title)
