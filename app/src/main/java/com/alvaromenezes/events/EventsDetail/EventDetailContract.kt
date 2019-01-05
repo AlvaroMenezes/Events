@@ -26,6 +26,7 @@ interface EventDetailContract {
         fun showPeople()
         fun showMapLocation()
         fun attach(view: EventDetailContract.View)
+        fun initCheckin()
         fun OnChekin(name: String, email : String )
     }
 

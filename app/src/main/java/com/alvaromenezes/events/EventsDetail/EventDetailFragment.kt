@@ -69,7 +69,7 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
         presenter.loadEventDetail(eventID)
 
         ivLocation.setOnClickListener { presenter.showMapLocation() }
-        ibCheckin.setOnClickListener {onCheckin() }
+        ibCheckin.setOnClickListener {presenter.initCheckin() }
 
         scrollDetail.smoothScrollTo(0,0)
 

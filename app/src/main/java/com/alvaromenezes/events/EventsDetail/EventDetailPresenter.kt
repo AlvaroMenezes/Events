@@ -10,6 +10,7 @@ import retrofit2.Response
 
 class EventDetailPresenter : EventDetailContract.Presenter {
 
+
     private lateinit var view: EventDetailContract.View
     private lateinit var eventID: String
     private  var event: Event? = null
@@ -90,6 +91,12 @@ class EventDetailPresenter : EventDetailContract.Presenter {
         }
 
         showPeople()
+    }
+
+    override fun initCheckin() {
+      if(event == null) return
+        view.onCheckin()
+
     }
 
 }
