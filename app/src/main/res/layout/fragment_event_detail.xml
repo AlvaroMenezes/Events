@@ -6,147 +6,193 @@
              android:layout_height="match_parent"
              tools:context=".EventsDetail.EventDetailFragment"
              android:padding="4dp">
-    <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
 
-            <android.support.v7.widget.CardView
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/cardOne"
-                    app:cardElevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="4dp"
-                    app:contentPadding="4dp"
-                    card_view:cardUseCompatPadding="true">
-                <RelativeLayout
-                        android:paddingTop="4dp"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+        <ImageButton
+                android:id="@+id/ibCheckin"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:background="@drawable/oval_shape"
+                android:src="@drawable/ic_check_24dp"
+                android:elevation="5dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="16dp"
+        />
 
-                    <ImageView
-                            android:layout_gravity="center"
-                            android:id="@+id/ivImageDetail"
-                            android:layout_width="match_parent"
-                            android:layout_height="256dp"
-                            android:adjustViewBounds="true"/>
-                    <TextView
-                            android:padding="4dp"
-                            android:id="@+id/tvTitleDetail"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@+id/ivImageDetail"
-                            android:textSize="18sp"
-                            android:textColor="@android:color/black"
-                            android:text="titulo"/>
+        <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
 
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/cardOne"
+                        app:cardElevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardCornerRadius="4dp"
+                        app:contentPadding="4dp"
+                        card_view:cardUseCompatPadding="true">
+                    <RelativeLayout
+                            android:paddingTop="4dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
 
 
-            <android.support.v7.widget.CardView
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/cardTwo"
-                    android:layout_gravity="center"
-                    app:cardElevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="4dp"
-                    app:contentPadding="4dp"
-                    android:layout_below="@+id/cardOne"
-                    card_view:cardUseCompatPadding="true">
+                        <ImageView
+                                android:layout_gravity="center"
+                                android:id="@+id/ivImageDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="256dp"
+                                android:adjustViewBounds="true"/>
+                        <TextView
+                                android:padding="4dp"
+                                android:id="@+id/tvTitleDetail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/ivImageDetail"
+                                android:textSize="18sp"
+                                android:textColor="@android:color/black"
+                                android:text="titulo"/>
 
-                <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
 
 
-                    <ImageView
-                            android:id="@+id/ivLocation"
-                            android:layout_width="48dp"
-                            android:layout_height="48dp"
-                            android:layout_centerVertical="true"
-                            android:layout_alignParentEnd="true"
-                            android:src="@drawable/maps_icon"
-                            android:adjustViewBounds="true"/>
+                <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/cardTwo"
+                        android:layout_gravity="center"
+                        app:cardElevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardCornerRadius="4dp"
+                        app:contentPadding="4dp"
+                        android:layout_below="@+id/cardOne"
+                        card_view:cardUseCompatPadding="true">
 
                     <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:padding="4dp">
+                            android:layout_height="wrap_content">
+
 
                         <TextView
-                                android:id="@+id/tvDateDetail"
+                                android:id="@+id/labelInfo"
+                                android:padding="4dp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:textSize="14sp"
-                                android:text="data"/>
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp"
+                                android:text="Detalhes:"/>
 
-                        <TextView
-                                android:id="@+id/tvPriceDetail"
+                        <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/tvDateDetail"
-                                android:textSize="14sp"
-                                android:text="preco"/>
+                                android:layout_below="@+id/labelInfo"
+                                android:gravity="center"
+                                android:padding="4dp">
+
+
+                            <ImageView
+                                    android:id="@+id/ivLocation"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/maps_icon"
+                                    android:adjustViewBounds="true"/>
+
+                            <RelativeLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:padding="4dp">
+
+                                <TextView
+                                        android:id="@+id/tvDateDetail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:textSize="14sp"
+                                        android:text="data"/>
+
+                                <TextView
+                                        android:id="@+id/tvPriceDetail"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/tvDateDetail"
+                                        android:textSize="14sp"
+                                        android:text="preco"/>
+                            </RelativeLayout>
+
+                        </RelativeLayout>
                     </RelativeLayout>
 
-                </RelativeLayout>
-
-            </android.support.v7.widget.CardView>
+                </android.support.v7.widget.CardView>
 
 
-            <android.support.v7.widget.CardView
-                    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/cardThree"
-                    android:layout_gravity="center"
-                    app:cardElevation="3dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    card_view:cardCornerRadius="4dp"
-                    app:contentPadding="4dp"
-                    android:layout_below="@+id/cardTwo"
-                    card_view:cardUseCompatPadding="true">
+                <android.support.v7.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/cardThree"
+                        android:layout_gravity="center"
+                        app:cardElevation="3dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardCornerRadius="4dp"
+                        app:contentPadding="4dp"
+                        android:layout_below="@+id/cardTwo"
+                        card_view:cardUseCompatPadding="true">
 
-                <RelativeLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                    <TextView
-                            android:id="@+id/labelDescription"
+                    <RelativeLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textColor="@android:color/black"
-                            android:textSize="16sp"
-                            android:text="Descricão:"/>
+                            android:layout_height="wrap_content">
+
+                        <TextView
+                                android:id="@+id/labelDescription"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp"
+                                android:text="Descricão:"/>
 
 
-                    <TextView
-                            android:layout_below="@+id/labelDescription"
-                            android:id="@+id/tvDescription"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:text="descricao"/>
+                        <TextView
 
-                    <android.support.v7.widget.RecyclerView
-                            android:padding="4dp"
-                            android:id="@+id/reciclerViewPerson"
-                            android:layout_width="match_parent"
-                            android:layout_height="200dp"
-                            android:layout_below="@+id/tvDescription"/>
-                </RelativeLayout>
+                                android:id="@+id/tvDescription"
+                                android:layout_below="@+id/labelDescription"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="14sp"
+                                android:text="descricao"/>
 
-            </android.support.v7.widget.CardView>
+                        <TextView
+                                android:id="@+id/labelWhoComes"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tvDescription"
+                                android:textColor="@android:color/black"
+                                android:textSize="16sp"
+                                android:text="Participantes:"/>
 
+                        <android.support.v7.widget.RecyclerView
+                                android:padding="4dp"
+                                android:id="@+id/reciclerViewPerson"
+                                android:layout_width="match_parent"
+                                android:layout_height="200dp"
+                                android:layout_below="@+id/labelWhoComes"/>
+                    </RelativeLayout>
 
-        </RelativeLayout>
-    </ScrollView>
+                </android.support.v7.widget.CardView>
+
+            </RelativeLayout>
+        </ScrollView>
+    </RelativeLayout>
 
 </FrameLayout>

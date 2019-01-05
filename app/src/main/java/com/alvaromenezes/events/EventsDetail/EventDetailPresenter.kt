@@ -5,7 +5,6 @@ import com.alvaromenezes.events.data.Person
 
 class EventDetailPresenter : EventDetailContract.Presenter {
 
-
     private lateinit var view: EventDetailContract.View
     private lateinit var eventID: String
     private lateinit var event: Event
@@ -55,17 +54,18 @@ class EventDetailPresenter : EventDetailContract.Presenter {
                 name = "Paulo Santos",
                 picture = "https://images.pexels.com/photos/1334945/pexels-photo-1334945.jpeg"
             )
-
-
         )
-
         view.showPeople(people)
+    }
+
+    override fun OnChekin() {
+
+
 
     }
 
 
     override fun attach(view: EventDetailContract.View) {
-
         this.view = view
     }
 

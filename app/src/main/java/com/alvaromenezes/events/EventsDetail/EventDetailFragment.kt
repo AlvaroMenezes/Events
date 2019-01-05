@@ -66,6 +66,7 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
         presenter.loadEventDetail(eventID)
 
         ivLocation.setOnClickListener { presenter.showMapLocation() }
+        ibCheckin.setOnClickListener {presenter.OnChekin()}
 
 
     }

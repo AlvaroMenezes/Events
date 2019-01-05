@@ -5,9 +5,7 @@ import com.alvaromenezes.events.data.Person
 
 interface EventDetailContract {
 
-
     interface View {
-
         fun loadImage(urlImage: String)
         fun showTitle(title: String)
         fun showPrice(price: String)
@@ -15,8 +13,6 @@ interface EventDetailContract {
         fun showDescription(description: String)
         fun showMapLocation(lat: String, lon: String, title: String)
         fun showPeople(people: List<Person>)
-
-
     }
 
     interface Presenter {
@@ -25,7 +21,7 @@ interface EventDetailContract {
         fun showPeople()
         fun showMapLocation()
         fun attach(view: EventDetailContract.View)
+        fun OnChekin()
     }
-
 
 }
