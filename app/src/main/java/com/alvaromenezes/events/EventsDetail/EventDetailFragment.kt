@@ -23,7 +23,6 @@ private const val ARG_EVENT_ID = "event_id"
 class EventDetailFragment : Fragment(), EventDetailContract.View {
 
 
-
     private lateinit var eventID: String
 
 
@@ -66,11 +65,10 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
         presenter.loadEventDetail(eventID)
 
         ivLocation.setOnClickListener { presenter.showMapLocation() }
-        ibCheckin.setOnClickListener {presenter.OnChekin()}
+        ibCheckin.setOnClickListener { presenter.OnChekin() }
 
 
     }
-
 
 
     override fun showPeople(people: List<Person>) {
@@ -115,13 +113,16 @@ class EventDetailFragment : Fragment(), EventDetailContract.View {
     override fun showDescription(description: String) {
         tvDescription.text = description
     }
+
     override fun showMapLocation(lat: String, lon: String, title: String) {
 
         val strUri = "http://maps.google.com/maps?q=loc:$lat,$lon ($title)"
         val intent = Intent(android.content.Intent.ACTION_VIEW, Uri.parse(strUri))
 
-        intent.setClassName("com.google.android.apps.maps",
-            "com.google.android.maps.MapsActivity")
+        intent.setClassName(
+            "com.google.android.apps.maps",
+            "com.google.android.maps.MapsActivity"
+        )
 
         startActivity(intent)
 

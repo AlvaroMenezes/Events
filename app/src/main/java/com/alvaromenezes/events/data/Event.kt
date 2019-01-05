@@ -13,8 +13,8 @@ class Event(
     val image: String = "",
     val description: String = "",
     val date: Long = 1,
-    people: List<Person>? = null,
-    cupons: List<Coupon>? = null
+    val people: List<Person>? = null,
+    val cupons: List<Coupon>? = null
 ) {
 
     val getPrice: String

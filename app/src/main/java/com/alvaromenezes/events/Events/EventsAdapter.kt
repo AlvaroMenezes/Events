@@ -50,7 +50,7 @@ class EventsAdapter(val events: List<Event>, private val eventView: EventsContra
                         .into(ivImage)
 
                     tvTitle.text = title
-                    tvPrice.text = getPrice
+                    tvDate.text = getDate
 
                     setOnClickListener { this@ViewHolder.eventView.showDetail(event.id) }
                 }

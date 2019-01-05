@@ -1,6 +1,10 @@
 package com.alvaromenezes.events.Events
 
 import com.alvaromenezes.events.data.Event
+import com.alvaromenezes.events.service.EventsService
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import javax.inject.Inject
 
 class EventsPresenter @Inject constructor() : EventsContract.Presenter {
@@ -14,23 +18,24 @@ class EventsPresenter @Inject constructor() : EventsContract.Presenter {
 
     override fun loadEvents() {
 
-        val items = listOf(
-            Event(
-                "id",
-                "tile1",
-                21.1,
-                image = "http://lproweb.procempa.com.br/pmpa/prefpoa/seda_news/usu_img/Papel%20de%20Parede.png"
-            ),
-            Event(
-                "id",
-                "tile2",
-                21.1,
-                image = "https://images.pexels.com/photos/1292306/pexels-photo-1292306.jpeg"
-            )
-        )
+        val call = EventsService().API().getEvents()
+        call.enqueue(object : Callback<List<Event>?> {
 
+            override fun onResponse(call: Call<List<Event>?>?, response: Response<List<Event>?>?) {
 
-        view.showEvents(items)
+                if (response != null) {
+                    if (response.isSuccessful) {
+                        view.showEvents(response.body()!!)
+
+                    }
+                }
+
+            }
+
+            override fun onFailure(call: Call<List<Event>?>?, t: Throwable?) {
+
+            }
+        })
     }
 
 
